@@ -1,7 +1,4 @@
-console.log('Start app');
-angular.module('todoApp', []);
-
-angular.module('todoListService', ()=>{
+angular.module('todoListServiceO', ()=>{
     let todoListArray = [{title: 'Hello ToDo', isActive: true}, {title: 'Hello ToDo 2', isActive: true} ];
 
     getItems = () => todoListArray;
@@ -20,17 +17,4 @@ angular.module('todoListService', ()=>{
         getItems: getItems,
         removeItem: removeItem
     }
-});
-
-angular.module('todoApp').controller('todoController', function($scope, todoListService){
-    console.log('Hello ToDo!');
-
-    $scope.addItem = () => {
-        todoListService.addItem("Hello");
-    }
-
-    $scope.getTodoItems = () => {
-        return todoListService.getTodoItems();
-    }
-
 });
