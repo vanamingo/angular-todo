@@ -26,7 +26,7 @@
 							<div class="view">
 								<input class="toggle" type="checkbox" ng-model="todo.isActive">
 								<label >{{todo.title}}</label>
-								<button class="destroy"></button>
+								<button class="destroy" ng-click="removeItem(todo)"></button>
 							</div>
 							<form>
 								<input class="edit">

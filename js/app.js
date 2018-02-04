@@ -11,7 +11,7 @@ angular.module('todoApp').service('todoListService', ()=>{
     }
 
     removeItem = (item) => {
-        todoListArray.splice.todoListArray(todoListArray.indexOf(item), 1);
+        todoListArray.splice(todoListArray.indexOf(item), 1);
     }
 
 
@@ -31,6 +31,10 @@ angular.module('todoApp').controller('todoController', function($scope, todoList
 
     $scope.getTodoItems = () => {
         return todoListService.getTodoItems();
+    }
+
+    $scope.removeItem = (todoItem) => {
+        todoListService.removeItem(todoItem);
     }
 
 });
