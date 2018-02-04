@@ -1,7 +1,7 @@
 angular.module('todoListServiceO', ()=>{
     let todoListArray = [{title: 'Hello ToDo', isActive: true}, {title: 'Hello ToDo 2', isActive: true} ];
 
-    getItems = () => todoListArray;
+    getTodoItems = () => todoListArray;
 
     addItem = (title) => {
         todoListArray.push({title: title, isActive: true});
@@ -14,7 +14,7 @@ angular.module('todoListServiceO', ()=>{
 
     return {
         addItem: addItem,
-        getItems: getItems,
+        getTodoItems: getTodoItems,
         removeItem: removeItem
     }
 });

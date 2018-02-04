@@ -1,10 +1,10 @@
 console.log('Start app');
 angular.module('todoApp', []);
 
-angular.module('todoListService', ()=>{
+angular.module('todoApp').service('todoListService', ()=>{
     let todoListArray = [{title: 'Hello ToDo', isActive: true}, {title: 'Hello ToDo 2', isActive: true} ];
 
-    getItems = () => todoListArray;
+    getTodoItems = () => todoListArray;
 
     addItem = (title) => {
         todoListArray.push({title: title, isActive: true});
@@ -17,7 +17,7 @@ angular.module('todoListService', ()=>{
 
     return {
         addItem: addItem,
-        getItems: getItems,
+        getTodoItems: getTodoItems,
         removeItem: removeItem
     }
 });
