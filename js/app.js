@@ -4,6 +4,12 @@ angular.module('todoApp', []);
 angular.module('todoApp').service('todoListService', ()=>{
     let todoListArray = [{title: 'Hello ToDo', isActive: true}, {title: 'Hello ToDo 2', isActive: false} ];
 
+    let listSettings = {
+        hideCompleted: false,
+        orderIsReversed: felse 
+    };
+
+
     getTodoItems = () => todoListArray;
 
     addItem = (title) => {
@@ -14,11 +20,16 @@ angular.module('todoApp').service('todoListService', ()=>{
         todoListArray.splice(todoListArray.indexOf(item), 1);
     }
 
+    setSourceSettings = () => {
+
+    }
 
     return {
         addItem: addItem,
         getTodoItems: getTodoItems,
-        removeItem: removeItem
+        removeItem: removeItem,
+        
+        setSorceSettings: setSourceSettings
     }
 });
 
