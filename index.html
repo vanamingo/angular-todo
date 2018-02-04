@@ -7,15 +7,14 @@
 		<link rel="stylesheet" href="css/index.css">
 		<script src="js/angular/angular.js"></script>
 		<script src="js/app.js"></script>
-		<script src="js/services/todoListService.js"></script>
 		<style>[ng-cloak] { display: none; }</style>
 	</head>
 	<body ng-app="todoApp">
 			<section id="todoapp" ng-controller="todoController">
 				<header id="header">
 					<h1>todos</h1>
-					<form id="todo-form">
-						<input id="new-todo" placeholder="What needs to be done?"  autofocus>
+					<form id="todo-form" >
+						<input ng-enter="addItem()" ng-model="newTodoTitle" id="new-todo" placeholder="What needs to be done?"  autofocus>
 					</form>
 				</header>
 				<section id="main" >

@@ -26,7 +26,8 @@ angular.module('todoApp').controller('todoController', function($scope, todoList
     console.log('Hello ToDo!');
 
     $scope.addItem = () => {
-        todoListService.addItem("Hello");
+        todoListService.addItem($scope.newTodoTitle);
+        $scope.newTodoTitle = null;
     }
 
     $scope.getTodoItems = () => {
@@ -37,4 +38,19 @@ angular.module('todoApp').controller('todoController', function($scope, todoList
         todoListService.removeItem(todoItem);
     }
 
+});
+
+
+// stackoverflow driven development :)
+angular.module('todoApp').directive('ngEnter', function () {
+    return function (scope, element, attrs) {
+        element.bind("keydown keypress", function (event) {
+            if (event.which === 13) {
+                scope.$apply(function () {
+                    scope.$eval(attrs.ngEnter);
+                });
+                event.preventDefault();
+            }
+        });
+    };
 });
