@@ -2,7 +2,7 @@ console.log('Start app');
 angular.module('todoApp', []);
 
 angular.module('todoApp').service('todoListService', ()=>{
-    let todoListArray = [{title: 'Hello ToDo', isActive: true}, {title: 'Hello ToDo 2', isActive: true} ];
+    let todoListArray = [{title: 'Hello ToDo', isActive: true}, {title: 'Hello ToDo 2', isActive: false} ];
 
     getTodoItems = () => todoListArray;
 
